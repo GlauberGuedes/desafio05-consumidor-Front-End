@@ -1,6 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  root:{
+    borderRadius: 30,
+  },
   container: {
     width: "100%",
   },

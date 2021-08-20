@@ -16,7 +16,8 @@ export default function ModalProduto({
   id,
   setMensagemSucesso,
   setErro,
-  quantidadeProduto
+  quantidadeProduto,
+  fecharCarrinho
 }) {
   const [open, setOpen] = useState(false);
   const { carrinho, setCarrinho, restaurante } = useAuth();
@@ -30,7 +31,10 @@ export default function ModalProduto({
   function handleClose() {
     setOpen(false);
     setProdutoAdicionado(false);
-    setQuantidade(1);
+    setQuantidade(1); 
+    if(fecharCarrinho) {
+      fecharCarrinho();
+    }
   }
 
   function adicionarAoCarrinho() {

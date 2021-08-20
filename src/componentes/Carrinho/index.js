@@ -166,6 +166,7 @@ export default function Carrinho({ setMensagemSucesso, fecharModalProduto }) {
         aria-labelledby="form-dialog-title"
         maxWidth={false}
         scroll="body"
+        classes={{root: classes.root}}
       >
         <div className={classes.carrinho}>
           <img
@@ -230,6 +231,7 @@ export default function Carrinho({ setMensagemSucesso, fecharModalProduto }) {
                       setMensagemSucesso={setMensagemSucesso}
                       descricao={produto.descricao}
                       precoProduto={produto.preco}
+                      fecharCarrinho={fecharModal}
                     />
                   ))}
                 </div>

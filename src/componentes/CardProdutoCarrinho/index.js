@@ -11,13 +11,14 @@ export default function CardProdutoCarrinho({
   setErro,
   descricao,
   precoProduto,
+  fecharCarrinho,
 }) {
 
 
 
   return (
     <div className="container-cardCarrinho" >
-      <ModalProduto id={id} nome={nome} quantidadeProduto={quantidade} descricao={descricao} imagem={imagem} preco={precoProduto} setMensagemSucesso={setMensagemSucesso} setErro={setErro} />
+      <ModalProduto id={id} nome={nome} quantidadeProduto={quantidade} descricao={descricao} imagem={imagem} preco={precoProduto} setMensagemSucesso={setMensagemSucesso} setErro={setErro} fecharCarrinho={fecharCarrinho} />
       <div className="conteudo-cardCarrinho">
         {imagem && <img src={imagem} alt="imagem do produto" />}
         <div className="informacao-cardCarrinho">
