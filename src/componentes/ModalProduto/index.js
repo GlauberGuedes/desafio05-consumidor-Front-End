@@ -15,11 +15,12 @@ export default function ModalProduto({
   imagem,
   id,
   setMensagemSucesso,
-  setErro
+  setErro,
+  quantidadeProduto
 }) {
   const [open, setOpen] = useState(false);
   const { carrinho, setCarrinho, restaurante } = useAuth();
-  const [quantidade, setQuantidade] = useState(1);
+  const [quantidade, setQuantidade] = useState(quantidadeProduto || 1);
   const [produtoAdicionado, setProdutoAdicionado] = useState(false);
 
   function handleClickOpen() {
@@ -38,8 +39,17 @@ export default function ModalProduto({
     const produtoNoCarrinho = carrinhoAtualizado.find(
       (produto) => produto.id === id
     );
+    if(!quantidadeProduto) {
+      if (produtoNoCarrinho) {
+        produtoNoCarrinho.quantidade += quantidade;
+        setCarrinho(carrinhoAtualizado);
+        setProdutoAdicionado(true);
+        return;
+      }
+    }
+    
     if (produtoNoCarrinho) {
-      produtoNoCarrinho.quantidade += quantidade;
+      produtoNoCarrinho.quantidade = quantidade;
       setCarrinho(carrinhoAtualizado);
       setProdutoAdicionado(true);
       return;

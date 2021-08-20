@@ -226,8 +226,10 @@ export default function Carrinho({ setMensagemSucesso, fecharModalProduto }) {
                       preco={produto.preco}
                       imagem={produto.imagem}
                       id={produto.id}
-                      carrinho={carrinho}
-                      setCarrinho={setCarrinho}
+                      setErro={setErro}
+                      setMensagemSucesso={setMensagemSucesso}
+                      descricao={produto.descricao}
+                      precoProduto={produto.preco}
                     />
                   ))}
                 </div>
