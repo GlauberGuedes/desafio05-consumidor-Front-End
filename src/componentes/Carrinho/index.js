@@ -36,7 +36,7 @@ export default function Carrinho({ setMensagemSucesso, fecharModalProduto }) {
     setCarregando(true);
 
     try {
-      const resposta = await fetch("http://localhost:8000/consumidor", {
+      const resposta = await fetch("http://undefinedconsumidor.herokuapp.com/consumidor", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ export default function Carrinho({ setMensagemSucesso, fecharModalProduto }) {
     }
     setCarregando(true);
     try {
-      const resposta = await fetch("http://localhost:8000/dados-pedido", {
+      const resposta = await fetch("http://undefinedconsumidor.herokuapp.com/dados-pedido", {
         method: "POST",
         body: JSON.stringify(carrinho),
         headers: {
