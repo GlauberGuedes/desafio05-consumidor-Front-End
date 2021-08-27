@@ -92,7 +92,7 @@ export default function ModalEndereco({ setMensagemSucesso, getDadosConsumidor }
     setErro("");
     setCarregando(true);
     try{
-      const resposta = await fetch("http://undefinedconsumidor.herokuapp.com/endereco", {
+      const resposta = await fetch("https://undefinedconsumidor.herokuapp.com/endereco", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

@@ -1,4 +1,4 @@
-const baseURL = "http://undefinedconsumidor.herokuapp.com/";
+const baseURL = "https://undefinedconsumidor.herokuapp.com/";
 
 export async function post(endPoint, data) {
   const headers = {
