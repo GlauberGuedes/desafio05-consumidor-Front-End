@@ -48,7 +48,7 @@ export default function ListaPedidos({
           )}
         </div>
         <p>
-          {saiuParaEntrega ? "Pedido à caminho" : "Sendo preparado"}
+          {saiuParaEntrega ? "Pedido a caminho da entrega" : "Sendo preparado"}
         </p>
         <p>{nome}</p>
         <p className="bold">
