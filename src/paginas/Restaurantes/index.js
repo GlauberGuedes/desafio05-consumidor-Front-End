@@ -64,11 +64,11 @@ export default function Produtos() {
       const { dados, erro } = await get(`${filtroCategoria ? `restaurantes?categoria=${filtroCategoria}` : 'restaurantes'}`, token);
 
       setCarregando(false);
-
+      
       if (erro) {
         return setErro(dados);
       }
-
+      
       return setRestaurantes(dados);
     } catch (error) {
       setCarregando(false);
@@ -189,11 +189,7 @@ export default function Produtos() {
         <div className="div-titulo">
           <h1>Restaurantes</h1>
           {detalhePedido && (
-            <ModalAcompanharPedido
-              detalhePedido={detalhePedido}
-              detalhamentoPedido={detalhamentoPedido}
-              setMensagemSucesso={setMensagemSucesso}
-            />
+            <button className="botao-link" onClick={() => history.push("/pedidos")}>Pedidos</button>
           )}
         </div>
         <img className="logomarca" src={logo} alt="logomarca" />
